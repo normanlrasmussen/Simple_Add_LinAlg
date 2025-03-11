@@ -1,0 +1,14 @@
+So the movie genras I want to have are:
+
+Action
+Adventure
+Comedy
+Drama
+Fantasy
+Horror
+Mystery
+Thriller
+Romance
+Sci-Fi
+Western
+
