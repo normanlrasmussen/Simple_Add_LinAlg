@@ -1,7 +1,7 @@
 import numpy as np
 
 class Person:
-    def __init__(self, randomize=True):
+    def __init__(self, randomize=True, name=None):
         if randomize:
             self.randomize()
         else:
@@ -9,7 +9,9 @@ class Person:
             self.tastes = np.zeros(11) #There tastes, normalized
             self.months_on_netflix = 0 #How long they have been on netflix
             self.movies_array = np.zeros(11) #This will be the altered movies watched list
-        self.name = False #Set the name to none
+        
+        self.name = name    
+            
         self.genre_key = { #This makes the genre key that will be used for later
             0: "Action",
             1: "Adventure",
@@ -34,6 +36,8 @@ class Person:
         self.movies_array = self.movies_watched
         self.tastes = self.movies_watched/np.linalg.norm(self.movies_watched)
         self.months_on_netflix = np.random.randint(0,24)
+
+        
 
     def favorite_genre(self) -> str:
         indices = np.where(self.tastes == self.tastes.max())[0]
